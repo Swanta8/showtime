@@ -73,27 +73,32 @@ A few things to know:
 - **Ideas:** the share copy says it is a concept or coming soon, never that it already ships.
 - **Privacy:** secrets, API keys, and real customer data never end up in the video; real-looking stand-ins are used instead.
 
-Steer the tone:
+## Options
+
+Add any of these after the source. They all combine.
+
+| Option | What it does | Default |
+|---|---|---|
+| `--duration <seconds>` | Length of the video, up to 60 seconds | 15–25 seconds, picked to fit |
+| `--format <shape>` | `landscape` (YouTube, websites), `vertical` (Reels, TikTok, Shorts), or `square` (LinkedIn, feeds) | `landscape` |
+| `--tone <preset or description>` | The style: `default`, `polished`, `yc-parody`, `chaotic`, `deadpan`, `cinematic`, `app-store`, or your own words | Picked to fit the product |
+| `--title "<name>"` | The product name shown in the video | Taken from the source |
+| `--idea "<description>"` | Make a concept video of something that is not built yet | — |
+| `--voice` | Adds a voiceover (Kokoro, through Hyperframes) | Off |
+| `--no-music` | Leaves out the music | Music on |
+| `--no-sfx` | Leaves out the sound effects | Sound effects on |
+
+Examples:
 
 ```text
+/showtime --duration 45
+/showtime https://example.com --duration 30 --format vertical
 /showtime --tone "fake Series A launch from 2016"
+/showtime http://localhost:3000 --tone app-store --voice
+/showtime --idea "a budgeting app that roasts your spending" --format square
 ```
 
-Voiceover is off by default. Enable it explicitly with:
-
-```text
-/showtime --voice
-```
-
-Narration uses Kokoro through Hyperframes when enabled.
-
-Need a longer demo? Videos are 15–25 seconds by default; ask for up to 60:
-
-```text
-/showtime https://example.com --duration 45
-```
-
-Pick the shape for where it's going with `--format landscape` (YouTube, websites), `vertical` (Reels, TikTok, Shorts), or `square` (LinkedIn, feeds).
+## What you get
 
 You get a `showtime-output/` folder with the plan, a composition brief, share copy, a poster image, and the rendered `showtime.mp4`. For a website or repo, the captured pages or cloned code sit in the same folder.
 
