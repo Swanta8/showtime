@@ -79,7 +79,8 @@ Write `<output-dir>/share-copy.txt`.
 The share copy should be:
 - One to three sentences max
 - Postable as-is to Twitter/X, LinkedIn, or Discord
-- Specific to the project — no generic "excited to share" language
+- Specific to the product — no generic "excited to share" language
+- For an **idea** source, honest that it is a concept or coming soon, never a claim that it already ships
 - Tone-matched to the showtime video
 
 `share-copy.txt` is the canonical single caption. Do not put multi-platform variants, long launch notes, or Product Hunt copy in this file.
@@ -157,6 +158,8 @@ After this step, `<output-dir>/` should contain:
   composition/            — the Hyperframes project
     index.html
     ...
+  capture/                — website source only: the Hyperframes capture
+  source/                 — repo source only: the shallow clone
 ```
 
 ## Telling the user

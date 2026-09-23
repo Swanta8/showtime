@@ -14,11 +14,12 @@ Create a short launch-style showtime video for [App Name].
 - Composition directory: `<output-dir>/composition/`
 - Rendered video: `<output-dir>/showtime.mp4`
 - Format: [landscape / vertical / square] — [width]x[height]
-- Duration: [15-25 seconds]
+- Duration: [15-25 seconds, or the requested --duration up to 60]
 
 ## Source Material
-- Project root: [path]
-- Primary files read: [index.html, styles.css, README, etc.]
+- Source type: [project / website / repo / idea / images]
+- Source location: [project root, URL + `<output-dir>/capture/`, clone in `<output-dir>/source/`, the idea text, or image paths]
+- Primary material used: [files read, capture screenshots and tokens, or images]
 - Product name: [name]
 - Tagline / strongest claim: [line]
 - Key UI or visual moment to recreate: [specific element]
@@ -39,12 +40,12 @@ Create a short launch-style showtime video for [App Name].
   - Unrelated visual redesign
 
 ## Visual Identity
-- Background: [exact value from project]
-- Text: [exact value from project]
-- Accent: [exact value from project]
+- Background: [exact value from the source]
+- Text: [exact value from the source]
+- Accent: [exact value from the source]
 - Display font: [font or fallback decision]
 - Body font: [font or fallback decision]
-- Visual references from the project: [short list]
+- Visual references from the source: [short list; for a website or images, the screenshot files to reuse]
 
 ## Storyboard
 Use the storyboard in `<output-dir>/showtime-plan.md` as the creative contract.
@@ -73,9 +74,9 @@ Scene summary:
 Load the composition-building Hyperframes domain skills — `hyperframes-core` (composition contract + `data-*` timing), `hyperframes-animation` (motion), `hyperframes-creative` (design spec, beats, audio-reactive), `hyperframes-keyframes` (seek-safe keyframes), and `hyperframes-cli` (lint/check/render). /showtime is its own workflow: do not enter the `hyperframes` entry-point intent interview and do not route into its generic promo / launch-video workflow. Prefer native Hyperframes conventions over anything in `/showtime`.
 
 Requirements:
-- Show at least one real UI, copy, or visual element from the source project.
+- Show at least one real UI, copy, or visual element from the source. For a website or images, reuse the captured screenshots and assets from their files. For an idea, show designed UI mockups.
 - Keep all text readable in the final render.
-- Keep the video within 15-25 seconds.
+- Keep the video within 15-25 seconds, or at the requested --duration (at most 60).
 - Include the planned music/SFX layer unless audio was explicitly disabled or documented as intentionally silent.
 - Treat `/showtime` audio notes as guidance, not a fixed cue sheet. Choose SFX after the visual animation exists.
 - Treat music cue metadata as optional timing hints. Hyperframes decides exact animation timing and should ignore cues that hurt readability, scene pacing, or the product story.
@@ -205,6 +206,6 @@ Before moving to delivery, verify:
 - [ ] At least one visual element subtly reacts to the music (audio-reactive treatment present), or extraction failure is documented.
 - [ ] At least 1 major tween is beat-locked to a strong cue (a `strongCue`, or the highest-`strength` beat from `hyperframes beats`) within ±0.15s, marked `// beat-locked` (or natural timing was chosen for readability).
 - [ ] Sequential events (cards, stats, list items) snap to consecutive `beats[]` timestamps (±0.10s), marked `// beat-grid` (or natural timing was chosen for readability).
-- [ ] The composition shows at least one real UI, copy, or visual element from the project.
-- [ ] Total duration is 15-25 seconds.
+- [ ] The composition shows at least one real UI, copy, or visual element from the source (designed mockups for an idea).
+- [ ] Total duration is 15-25 seconds, or the requested --duration (at most 60).
 - [ ] Hyperframes check passes, or any blocker is documented for the user.

@@ -1,6 +1,6 @@
 {
   "name": "showtime",
-  "description": "Showtime by jimme.xyz. You built it. Now it is showtime. Turn the project you just shipped into a short, shareable launch video with one command.",
+  "description": "Showtime by jimme.xyz. You built it. Now it is showtime. Turn your website, app, project, or idea into a short, shareable demo video with one command.",
   "owner": {
     "name": "Jimme Jon-Ming",
     "url": "https://jimme.xyz"
@@ -9,8 +9,8 @@
     {
       "name": "showtime",
       "source": "./",
-      "description": "Showtime by jimme.xyz: turn the current project website into a short, polished, shareable launch video using HyperFrames.",
-      "version": "1.0.0"
+      "description": "Showtime by jimme.xyz: turn a project, website URL, GitHub repo, idea, or screenshots into a short, polished demo video using HyperFrames.",
+      "version": "1.1.0"
     }
   ]
 }

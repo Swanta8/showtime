@@ -6,7 +6,7 @@
 
 ![the /showtime launch site — you built it, now it is showtime](docs/assets/hero.png)
 
-Showtime is a Claude Code skill, run with `/showtime`, that turns the project you created into a short, shareable launch video — music, motion, and share copy included. One command, powered by [Hyperframes](https://hyperframes.heygen.com/).
+Showtime is a Claude Code skill, run with `/showtime`, that turns your website, app, project, or idea into a short, professional demo video — music, motion, and share copy included. One command, powered by [Hyperframes](https://hyperframes.heygen.com/).
 
 Made by [jimme.xyz](https://jimme.xyz).
 
@@ -17,7 +17,7 @@ Made by [jimme.xyz](https://jimme.xyz).
 /plugin install showtime@showtime
 ```
 
-Then run `/showtime` inside any project.
+Then run `/showtime` inside any project, or give it a URL or an idea from anywhere.
 
 **Any other agent** — one command via the [`skills`](https://github.com/vercel-labs/skills) CLI (Cursor, Codex, Copilot, Gemini CLI, opencode, and more):
 
@@ -53,13 +53,27 @@ This repo exposes the skill at every agent's standard discovery path via symlink
 
 ## Use it
 
-From any project directory, ask your agent:
+Give `/showtime` whatever you have. It works out the source from what you type:
 
-```text
-let's /showtime
-```
+| You have | Type | What it uses |
+|---|---|---|
+| **A project on your machine** | `/showtime` (inside the project folder) | The code: pages, styles, components, README |
+| **A live website** | `/showtime https://example.com` | Screenshots, colors, fonts, text, and images from the site |
+| **An app running locally** | `/showtime http://localhost:3000` | The same as a website, straight from your dev server |
+| **A GitHub repo** | `/showtime https://github.com/owner/repo` | A read-only copy of the code, plus the live demo if the README links one |
+| **An idea, nothing built yet** | `/showtime --idea "a budgeting app that roasts your spending"` | Your description; it designs the UI mockups itself and presents the video as a concept |
+| **Screenshots or mockups** | `/showtime ./screens/home.png ./screens/result.png` | Your images as the real UI, animated in order |
 
-Or steer the tone:
+Screenshots can also be added next to any other source as extra material.
+
+A few things to know:
+
+- **Websites:** only public pages are captured. Showtime never logs in or fills in forms; for a page behind a login, use screenshots instead. Screenshots stay on your machine. Make a video of someone else's site only with their permission.
+- **Repos:** the code is read, never installed or run.
+- **Ideas:** the share copy says it is a concept or coming soon, never that it already ships.
+- **Privacy:** secrets, API keys, and real customer data never end up in the video; real-looking stand-ins are used instead.
+
+Steer the tone:
 
 ```text
 /showtime --tone "fake Series A launch from 2016"
@@ -73,11 +87,19 @@ Voiceover is off by default. Enable it explicitly with:
 
 Narration uses Kokoro through Hyperframes when enabled.
 
-You get a `showtime-output/` folder with the plan, a composition brief, share copy, and the rendered `showtime.mp4`.
+Need a longer demo? Videos are 15–25 seconds by default; ask for up to 60:
+
+```text
+/showtime https://example.com --duration 45
+```
+
+Pick the shape for where it's going with `--format landscape` (YouTube, websites), `vertical` (Reels, TikTok, Shorts), or `square` (LinkedIn, feeds).
+
+You get a `showtime-output/` folder with the plan, a composition brief, share copy, a poster image, and the rendered `showtime.mp4`. For a website or repo, the captured pages or cloned code sit in the same folder.
 
 ## How it works
 
-`/showtime` owns the story — the product angle, tone, and which moments to show. It hands a focused brief to [Hyperframes](https://hyperframes.heygen.com/), which builds, times, and renders the video.
+`/showtime` owns the story — the product angle, tone, and which moments to show. It reads the source (code, a captured website, a repo, your idea, or your screenshots), plans a storyboard, and hands a focused brief to [Hyperframes](https://hyperframes.heygen.com/), which builds, times, and renders the video.
 
 ## Requirements
 

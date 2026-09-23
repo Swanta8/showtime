@@ -48,7 +48,9 @@ landing-page-only, write "none — landing-page only" and rely on Key moments in
 ## Format: [landscape / vertical / square] — [width]x[height]
 ## Duration: [target seconds]
 
-## Visual identity (from the project)
+## Source: [project / website / repo / idea / images] — [path, URL, or one-line idea]
+
+## Visual identity (from the source)
 - Background: [exact color value]
 - Accent: [exact color value]
 - Text: [exact color value]
@@ -113,10 +115,10 @@ But adapt it. These are the right scene counts for each tone:
 
 ## Duration guidance
 
-Scene durations must sum to 15-25 seconds. Count them.
+Scene durations must sum to 15-25 seconds. Count them. When the user asked for a longer demo with `--duration`, hit that target instead (at most 60 seconds) and add scenes of the user flow rather than stretching holds.
 
 - Under 15 seconds: too thin, add a scene or lengthen holds.
-- Over 25 seconds: cut a scene or tighten timing.
+- Over 25 seconds without a `--duration` request: cut a scene or tighten timing.
 - 18-22 seconds is the sweet spot for most showtime videos.
 
 ## Reading time (keep the pace, not at text's expense)
@@ -160,6 +162,8 @@ Avoid (marketing-only scenes when a flow exists):
 Stat cards, headline blocks, and the landing-page hero still have a place — but at most one of them, used as a frame around the flow, not as a substitute. The centerpiece is the working app.
 
 If the project has no app (landing-page-only static site), skip this section and recreate the landing-page strongest visual instead.
+
+For a **website** source, the flow comes from the captured screenshots. For **images**, the images are the flow: animate them in order. For an **idea**, the flow is designed from the description and shown as mockups.
 
 ## Look for interaction and sequential reveal moments
 

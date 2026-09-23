@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "showtime",
-  "description": "Showtime by jimme.xyz. You built it. Now it is showtime. Turn the current project into a short, polished, shareable launch video using HyperFrames.",
-  "version": "1.0.0",
+  "description": "Showtime by jimme.xyz. You built it. Now it is showtime. Turn your website, app, project, repo, or idea into a short, polished demo video using HyperFrames.",
+  "version": "1.1.0",
   "author": {
     "name": "Jimme Jon-Ming",
     "email": "Swanta8@users.noreply.github.com",
@@ -13,7 +13,9 @@
   "repository": "https://github.com/Swanta8/showtime",
   "keywords": [
     "video",
+    "demo",
     "launch",
+    "website",
     "hyperframes",
     "skill",
     "showtime"

@@ -1,6 +1,6 @@
 ---
 name: showtime
-description: Turn the current project website into a short, polished, shareable launch video using Hyperframes. Use when someone says "/showtime", "it's showtime", "make a launch video", "turn this into a video", or wants to share what they built. Reads the project code directly — no live URL or screenshots needed.
+description: Turn a project, website, app, GitHub repo, idea, or set of screenshots into a short, polished, shareable demo or launch video using Hyperframes. Use when someone says "/showtime", "it's showtime", "make a launch video", "make a demo video of this site", "turn this URL into a video", "turn this idea into a video", or wants to share what they built. Works from the current project code by default; a URL, repo link, idea, or image paths in the invocation switch the source.
 ---
 
 # /showtime
@@ -14,12 +14,12 @@ invocation contains `--voice`, set `voice.enabled = true`. Enable narration
 only for that run. Do not enable narration automatically and do not fall back
 to the normal no-voice workflow.
 
-`/showtime` turns the current project website or app into a short, polished, shareable launch video using Hyperframes. It is narrow, opinionated, and fun.
+`/showtime` turns a project, website, app, idea, or set of screenshots into a short, polished, shareable demo video using Hyperframes. It is opinionated and fun, and it always shows the real thing when there is one.
 
 ## What this skill does
 
-1. Reads the current project code to understand the app.
-2. Plans a short showtime concept specific to this project.
+1. Reads the source to understand the product: the current project code, a live website, a GitHub repo, an idea, or screenshots.
+2. Plans a short showtime concept specific to this product.
 3. Scripts and storyboards the video.
 4. Hands a focused composition brief to Hyperframes.
 5. Validates, renders, and writes share copy.
@@ -33,6 +33,11 @@ The user may invoke with natural language or flags:
 /showtime --tone chaotic
 /showtime --tone polished --format vertical
 /showtime this. Make it feel like a ridiculous startup launch.
+/showtime https://example.com
+/showtime http://localhost:3000 --tone app-store
+/showtime https://github.com/owner/repo
+/showtime --idea "a budgeting app that roasts your spending"
+/showtime ./screens/home.png ./screens/result.png
 ```
 
 Parse these options:
@@ -41,11 +46,25 @@ Parse these options:
 |---|---|---|
 | `--tone` | preset or freeform description | inferred |
 | `--format` | `landscape`, `vertical`, `square` | `landscape` |
-| `--duration` | seconds | auto (15-25s) |
+| `--duration` | seconds, up to 60 | auto (15-25s) |
 | `--no-music` | flag | music on |
 | `--no-sfx` | flag | sfx on |
 | `--title` | string | inferred from project |
 | `--voice` | flag | narration off |
+| `--idea` | description of a product that does not exist yet | none |
+| URL, repo link, or image paths | positional | current project |
+
+## Choosing the source
+
+Pick exactly one primary source from the invocation, in this order:
+
+1. `--idea "<text>"`, or a request that describes a product with no code, URL, or images: **idea**.
+2. A `https://github.com/<owner>/<repo>` (or other git host) link: **repo**.
+3. Any other `http://` or `https://` URL, including `localhost`: **website**.
+4. One or more image paths (`.png`, `.jpg`, `.webp`) or images pasted into the conversation: **images**.
+5. Nothing of the above: **project**, the current working directory.
+
+Images can also be added next to another source as extra UI material. Record the chosen source at the top of `showtime-plan.md`. Each source has its own inspection path in Step 1.
 
 Voice is opt-in. If `--voice` is present, use Kokoro via Hyperframes and do
 not add any provider-selection logic. The voice workflow is intentionally
@@ -89,7 +108,7 @@ Generate the timestamp at the start of the run (`YYYY-MM-DD-HHmmss`) and use it 
 
 **Read:** [references/step-1-inspect.md](references/step-1-inspect.md)
 
-Scan the project directory and extract the information needed to plan the showtime video.
+Inspect the chosen source (project, website, repo, idea, or images) and extract the information needed to plan the showtime video.
 
 **Gate:** You can answer all 9 questions in the showtime planning rubric.
 
@@ -103,7 +122,7 @@ Write `<output-dir>/showtime-plan.md` (where `<output-dir>` is `showtime-output/
 
 When music is selected, include a compact `Music cue guidance` section: read the bundled track's cue preset from `<skill-dir>/assets/music/cues/` if present, otherwise note cues will be detected at composition time (any track now supports beat sync — see `references/audio.md`). Cue metadata is optional timing guidance only: story, readability, pacing, and product clarity stay primary.
 
-**Gate:** `<output-dir>/showtime-plan.md` exists with a full storyboard. Scene durations sum to 15–25 seconds.
+**Gate:** `<output-dir>/showtime-plan.md` exists with a full storyboard. Scene durations sum to 15–25 seconds, or to the requested `--duration` (at most 60).
 
 ---
 
@@ -155,13 +174,13 @@ Always allow a freeform creative direction to refine or override the preset.
 
 These apply to every showtime video regardless of tone.
 
-**Short.** 15–25 seconds. Not one second more without a reason.
+**Short.** 15–25 seconds by default. A longer demo (up to 60 seconds) only when the user asks for it with `--duration`.
 
 **Readable.** Keep the pace high through motion and cuts, never by flashing text. Every line a viewer must read holds long enough to read it (short label ~0.8s settled; a sentence ~0.3s per word). Fast-in, then hold — never fast-in, then gone.
 
-**Specific.** The video must feel like it was made for this exact project, not any project.
+**Specific.** The video must feel like it was made for this exact product, not any product.
 
-**Show the thing.** At least one scene must display actual UI, copy, or a key visual from the product. No abstract filler.
+**Show the thing.** At least one scene must display actual UI, copy, or a key visual from the product. For an idea, that is a designed mock of its UI, based on the idea itself. No abstract filler.
 
 **No generic SaaS language.** "Streamline your workflow" is banned. Use the project's actual copy and claims.
 
