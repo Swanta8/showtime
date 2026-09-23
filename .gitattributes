@@ -1,0 +1,4 @@
+# Symlinks — never subject to text/EOL normalization
+.agents/skills/showtime -text
+.claude/skills/showtime -text
+.opencode/skills/showtime -text

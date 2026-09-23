@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="showtime">
+  <defs>
+    <linearGradient id="beam" x1="22.2" y1="10.4" x2="10" y2="25.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#faedf8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ed66e5" stop-opacity="0.28"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#1a0319"/>
+  <path d="M20.0 8.4 L24.8 12.0 L16.2 25.6 L4.0 25.4 Z" fill="url(#beam)"/>
+  <ellipse cx="10.1" cy="25.5" rx="6.2" ry="1.9" fill="#ed66e5"/>
+  <g transform="translate(24.2 7.8) rotate(127.4)">
+    <path d="M-3 -2.2 L3 -3.3 L3 3.3 L-3 2.2 Z" fill="#d939d2" stroke="#d939d2" stroke-width="0.8" stroke-linejoin="round"/>
+    <rect x="2.4" y="-3.1" width="1.2" height="6.2" rx="0.6" fill="#faedf8"/>
+  </g>
+</svg>

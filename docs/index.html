@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>showtime — you built it. now it is showtime.</title>
+<meta name="description" content="A Claude Code skill that turns the project you created into a twenty-second launch video. One command. Postable everywhere." />
+<meta name="theme-color" content="#d939d2" />
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+<meta property="og:title" content="showtime — you built it. now it is showtime." />
+<meta property="og:description" content="A Claude Code skill that turns the project you created into a short, postable launch video." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;900&family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#examples">skip to examples</a>
+
+<header class="hero">
+  <div class="topbar">
+    <span class="mark"><img src="assets/logo.svg" alt="" width="26" height="26">/showtime</span>
+    <nav aria-label="primary">
+      <a href="#examples">examples</a>
+      <a href="#install">install</a>
+      <a href="https://github.com/Swanta8/showtime" target="_blank" rel="noopener">github</a>
+      <a href="https://jimme.xyz" target="_blank" rel="noopener">jimme.xyz</a>
+    </nav>
+  </div>
+
+  <div class="hero-main">
+    <div class="hero-body">
+      <h1 class="hero-headline">you built it.<br/>now it is<br/><span class="emph">showtime.</span></h1>
+      <p class="hero-sub">A Claude Code skill that turns the project you created into a <strong>twenty-second launch video</strong>. One command. Music, motion, share copy included.</p>
+    </div>
+    <aside class="hero-video" aria-label="the showtime-about-showtime video">
+      <video
+        id="hero-vid"
+        class="hero-video-media"
+        src="assets/showtime-about-showtime.mp4"
+        poster="assets/hero-poster.jpg"
+        muted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+      <div class="hero-controls">
+        <button id="hero-playback" class="hero-control hero-playback" type="button" aria-label="play showtime video" title="play showtime video" data-mode="play">
+          <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6 5h4v14H6zm8 0h4v14h-4z"/>
+          </svg>
+        </button>
+        <button id="hero-mute" class="hero-control hero-mute" type="button" aria-label="unmute showtime video" aria-pressed="true">
+          <svg class="icon-muted" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 9v6h4l5 4V5L7 9H3zm13.59 3l2.7-2.7-1.41-1.42L15.17 10.6 12.46 7.88l-1.41 1.41 2.71 2.71-2.71 2.71 1.41 1.41 2.71-2.7 2.71 2.7 1.41-1.41-2.7-2.7z"/>
+          </svg>
+          <svg class="icon-sound" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 9v6h4l5 4V5L7 9H3zm10.5 3a4.5 4.5 0 00-2.5-4.03v8.05A4.5 4.5 0 0013.5 12zm-2.5-9v2.06A7 7 0 0117 12a7 7 0 01-6 6.92V21A9 9 0 0019 12 9 9 0 0011 3z"/>
+          </svg>
+          <span class="hero-mute-label">tap for sound</span>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero-foot" id="install">
+    <div class="install-stack"><span class="install-label">claude code</span><pre class="install" aria-label="Claude Code install command"><span class="copy-wrap"><button class="copy" type="button" data-copy="/plugin marketplace add Swanta8/showtime&#10;/plugin install showtime@showtime">copy</button></span><code><span class="prompt">$</span> /plugin marketplace add Swanta8/showtime
+<span class="prompt">$</span> /plugin install showtime@showtime</code></pre><span class="install-label">any other agent</span><pre class="install" aria-label="any-agent install command"><span class="copy-wrap"><button class="copy" type="button" data-copy="npx skills add https://github.com/Swanta8/showtime --skill showtime">copy</button></span><code><span class="prompt">$</span> npx skills add https://github.com/Swanta8/showtime --skill showtime</code></pre></div>
+    <div class="hero-meta"><span class="dot" aria-hidden="true"></span>plays well with all agents · made by <a href="https://jimme.xyz" style="color:inherit;">jimme.xyz</a></div>
+  </div>
+</header>
+
+<main id="examples">
+  <section class="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-head">
+      <div>
+        <p class="gallery-eyebrow">three apps by <a href="https://jimme.xyz" style="color:inherit;">jimme.xyz</a></p>
+        <h2 class="gallery-title" id="gallery-title">what twenty<br/>seconds of <em>showtime</em><br/>looks like.</h2>
+      </div>
+      <p class="gallery-note">Tap play to watch with sound. The thumbnail opens the project.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card" data-place="feature">
+        <div class="card-media">
+          <video
+            class="showtime-video"
+            src="examples/bookmark-importer/showtime.mp4"
+            poster="examples/bookmark-importer/showtime.jpg"
+            preload="metadata"
+            playsinline
+            controls
+            aria-label="bookmark importer showtime video"
+          ></video>
+        </div>
+        <div class="card-cap">
+          <a class="site-link" href="https://github.com/Swanta8/BookmarkImporter" target="_blank" rel="noopener" aria-label="open bookmark importer on github"><img src="examples/bookmark-importer/site.jpg" alt="" loading="lazy"></a>
+          <span class="cap-text"><span class="num">01</span><span class="card-name">bookmark importer</span><span class="cap-cat">macos</span></span>
+        </div>
+      </article>
+
+      <article class="card" data-place="tall">
+        <div class="card-media">
+          <img class="card-still" src="examples/factuur-analyzer/showtime.jpg" alt="Factuur Item Analyzer: 347 facturen, wat koop je het vaakst? Top producten-tabel met koffiebonen bovenaan." loading="lazy">
+        </div>
+        <div class="card-cap">
+          <a class="site-link" href="https://jimme.xyz" target="_blank" rel="noopener" aria-label="open jimme.xyz"><img src="examples/factuur-analyzer/site.jpg" alt="" loading="lazy"></a>
+          <span class="cap-text"><span class="num">02</span><span class="card-name">factuur analyzer</span><span class="cap-cat">facturen</span></span>
+        </div>
+      </article>
+
+      <article class="card" data-place="right">
+        <div class="card-media">
+          <img class="card-still" src="examples/perceel-leadgen/showtime.jpg" alt="Perceel LeadGen: 8.412 panden, 87 nieuwe leads. Gescoorde zoekresultaten uit de BAG." loading="lazy">
+        </div>
+        <div class="card-cap">
+          <a class="site-link" href="https://jimme.xyz" target="_blank" rel="noopener" aria-label="open jimme.xyz"><img src="examples/perceel-leadgen/site.jpg" alt="" loading="lazy"></a>
+          <span class="cap-text"><span class="num">03</span><span class="card-name">perceel leadgen</span><span class="cap-cat">vastgoed</span></span>
+        </div>
+      </article>
+
+      <article class="card is-cta" data-place="half">
+        <div class="card-media">
+          <span class="cta-word">your<br/>showtime<br/>here</span>
+        </div>
+        <div class="card-cap">
+          <a class="site-link" href="#install" aria-label="install /showtime"><span>your<br/>site</span></a>
+          <span class="cap-text"><span class="num">04</span><span class="card-name">your project</span><span class="cap-cat">install</span></span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="outro" aria-labelledby="outro-title">
+    <div class="outro-inner">
+      <h2 class="outro-headline" id="outro-title">it is <em>showtime.</em></h2>
+      <div class="outro-grid">
+        <p class="outro-meta">we pointed <code>/showtime</code> at <code>/showtime</code>. the twenty-second video looping in the top-right corner of this page was made by the skill itself, on this very project. that's the demo.</p>
+        <div class="outro-actions">
+          <div class="install-stack"><span class="install-label">claude code</span><pre class="install" aria-label="Claude Code install command"><span class="copy-wrap"><button class="copy" type="button" data-copy="/plugin marketplace add Swanta8/showtime&#10;/plugin install showtime@showtime">copy</button></span><code><span class="prompt">$</span> /plugin marketplace add Swanta8/showtime
+<span class="prompt">$</span> /plugin install showtime@showtime</code></pre><span class="install-label">any other agent</span><pre class="install" aria-label="any-agent install command"><span class="copy-wrap"><button class="copy" type="button" data-copy="npx skills add https://github.com/Swanta8/showtime --skill showtime">copy</button></span><code><span class="prompt">$</span> npx skills add https://github.com/Swanta8/showtime --skill showtime</code></pre></div>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>made with <a href="https://github.com/Swanta8/showtime" style="color:inherit;">/showtime</a> and <a href="https://hyperframes.dev" target="_blank" rel="noopener" style="color:inherit;">hyperframes</a></span>
+        <span>a <a href="https://jimme.xyz" style="color:inherit;">jimme.xyz</a> project</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="main.js" defer></script>
+</body>
+</html>

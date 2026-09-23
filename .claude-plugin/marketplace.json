@@ -1,0 +1,15 @@
+{
+  "name": "showtime",
+  "description": "You built it. Now it is showtime. Turn the project you just shipped into a short, shareable launch video with one command.",
+  "owner": {
+    "name": "Jimme",
+    "url": "https://jimme.xyz"
+  },
+  "plugins": [
+    {
+      "name": "showtime",
+      "source": "./",
+      "description": "Turn the current project website into a short, polished, shareable launch video using HyperFrames."
+    }
+  ]
+}

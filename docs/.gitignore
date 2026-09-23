@@ -1,0 +1,11 @@
+# Built demo gallery: ignore everything, then allow only the three slugs the
+# gallery shows (each ships a showtime.jpg poster + a site.jpg thumbnail, plus showtime.mp4 when it has a video).
+examples/*
+!examples/bookmark-importer/
+!examples/factuur-analyzer/
+!examples/perceel-leadgen/
+
+# Heavy HyperFrames composition/render sources — never committed
+showtime-output*/
+
+.DS_Store
