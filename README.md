@@ -1,12 +1,12 @@
-<img src="docs/assets/logo.svg" alt="showtime logo" width="72">
+<img src="docs/assets/logo.svg" alt="Showtime by jimme.xyz logo" width="72">
 
-# /showtime
+# Showtime by jimme.xyz
 
 **You built it. Now it is showtime.**
 
 ![the /showtime launch site — you built it, now it is showtime](docs/assets/hero.png)
 
-`/showtime` is a Claude Code skill that turns the project you created into a short, shareable launch video — music, motion, and share copy included. One command, powered by [Hyperframes](https://hyperframes.heygen.com/).
+Showtime is a Claude Code skill, run with `/showtime`, that turns the project you created into a short, shareable launch video — music, motion, and share copy included. One command, powered by [Hyperframes](https://hyperframes.heygen.com/).
 
 Made by [jimme.xyz](https://jimme.xyz).
 
